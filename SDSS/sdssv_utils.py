@@ -1077,9 +1077,6 @@ def sdssv_carton_query(carton_id, qlimit=500000):
     print('Performing query...',end='',flush=True)
     res = SDSS.query_sql(catalog_query, data_release=18)
     res = res.to_pandas()
-    res['carton'] = res['carton'].str.decode('utf-8')
-    res['cadence'] = res['cadence'].str.decode('utf-8')
-    res['instrument'] = res['instrument'].str.decode('utf-8')
     print('Finished')
 
     return res
